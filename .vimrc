@@ -1,3 +1,5 @@
+ " Random Configuration Toggles: 
+ " ==============================
 set tabstop=4
 
  " Enable Line Numbering
@@ -7,8 +9,20 @@ set nu
 syntax enable
 
  " Solarized colorscheme
-set background=dark
-colorscheme solarized
+"During the day, I want it dark. At night, I want the light version.
+let hour = strftime("%H")
+if 8 <= hour && hour <= 17
+  colorscheme Solarized
+  set background=light
+else
+  colorscheme Solarized
+  set background=dark
+endif
+ 
+colorscheme Nefertiti
+
+set foldmethod=indent
+set foldlevel=99
 
  " Informaion required for Vundle
 
@@ -16,8 +30,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
- " Package Management (Imported from Vundle Readme)
- " ================================================
+ " Package Management (Imported from Vundle Readme): 
+ " ================================================= 
 
  " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -38,8 +52,27 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+ " Trying the hemisu.vim colorscheme
+Plugin 'noahfrederick/vim-hemisu'
 
- " To ignore plugin indent changes, instead use:
+ " Trying the Nefertiti.vim colorscheme
+Plugin 'jeetsukumaran/vim-nefertiti'
+
+ " VimRoom Plugin
+Plugin 'mikewest/vimroom'
+
+ " VimOutliner
+Plugin 'VimOutliner/VimOutliner'
+
+ " Powerline 
+Plugin 'Lokaltog/powerline'
+
+ " Tabular
+Plugin 'godlygeek/tabular'
+
+ " Vim-Markdown
+Plugin 'plasticboy/vim-markdown'
+
 filetype plugin on
  "
  " Brief help
@@ -53,7 +86,7 @@ filetype plugin on
 
  " Keyboard Shortcuts
  " ==================
-inoremap xj <Esc>
+inoremap -; <Esc>
 map <C-n> :NERDTreeToggle<CR>
 
  " Other Application Toggles
@@ -61,5 +94,3 @@ map <C-n> :NERDTreeToggle<CR>
  "
  " Enable hidden files in NERD Tree
 let NERDTreeShowHidden=1
-
-
