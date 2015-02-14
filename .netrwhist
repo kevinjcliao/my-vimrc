@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =1
 let g:netrw_dirhist_1='/webapps/kevinliao_website/kevin_liao_website/static/styles'
+=======
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/kevinliao/Documents/Programming/git/first_git_project/.git'
+let g:netrw_dirhist_2='/Users/kevinliao/.oh-my-zsh'
+>>>>>>> e1959bd33cd59ba07a22aa4399c00af8aa90c2d0
